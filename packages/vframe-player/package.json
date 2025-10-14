@@ -2,6 +2,17 @@
   "name": "@leexiaohui/vframe-player",
   "version": "0.0.1",
   "private": false,
+  "license": "MIT",
+  "author": "橙续缘 <1287338537@qq.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leexiaohui1997/npm-projects.git",
+    "directory": "packages/vframe-player"
+  },
+  "homepage": "https://github.com/leexiaohui1997/npm-projects/tree/main/packages/vframe-player#readme",
+  "bugs": {
+    "url": "https://github.com/leexiaohui1997/npm-projects/issues"
+  },
   "main": "dist/index.cjs",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
@@ -13,7 +24,8 @@
     }
   },
   "files": [
-    "dist/**"
+    "dist/**",
+    "LICENSE"
   ],
   "sideEffects": false,
   "scripts": {

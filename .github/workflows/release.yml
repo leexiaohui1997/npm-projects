@@ -56,6 +56,16 @@ jobs:
       - name: Build
         run: pnpm -r --filter ./packages/** run build
 
+      - name: Copy LICENSE into all packages
+        run: |
+          if [ -f LICENSE ]; then
+            for d in packages/*; do
+              if [ -d "$d" ]; then
+                cp LICENSE "$d/LICENSE" || true
+              fi
+            done
+          fi
+
       - name: Changesets release
         uses: changesets/action@v1
         with:

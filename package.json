@@ -4,6 +4,16 @@
   "private": true,
   "type": "module",
   "packageManager": "pnpm@8.15.1",
+  "license": "MIT",
+  "author": "橙续缘 <1287338537@qq.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leexiaohui1997/npm-projects.git"
+  },
+  "homepage": "https://github.com/leexiaohui1997/npm-projects#readme",
+  "bugs": {
+    "url": "https://github.com/leexiaohui1997/npm-projects/issues"
+  },
   "engines": {
     "node": ">=18",
     "pnpm": ">=8"
