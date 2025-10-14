@@ -18,6 +18,8 @@ concurrency:
 jobs:
   release:
     runs-on: ubuntu-latest
+    env:
+      NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -33,6 +35,13 @@ jobs:
           node-version: '20'
           cache: 'pnpm'
           registry-url: 'https://registry.npmjs.org/'
+          always-auth: true
+
+      - name: Verify npm auth & registry
+        run: |
+          echo "registry: $(npm config get registry)"
+          npm whoami || echo "Not authenticated"
+          npm view @leexiaohui/vframe-player version || echo "Package not found (first publish is expected)"
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
