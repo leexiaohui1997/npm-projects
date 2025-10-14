@@ -15,6 +15,8 @@
     "lint": "eslint . --ext .ts,.tsx,.vue",
     "format": "prettier --write .",
     "release": "pnpm -r build && pnpm -r test && pnpm changeset",
+    "version-packages": "pnpm -w changeset version",
+    "publish-packages": "pnpm -w changeset publish",
     "prepare": "husky install"
   },
   "lint-staged": {
