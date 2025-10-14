@@ -1,0 +1,57 @@
+{
+  "name": "npm-projects",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@8.15.1",
+  "engines": {
+    "node": ">=18",
+    "pnpm": ">=8"
+  },
+  "scripts": {
+    "build": "pnpm -r --filter ./packages/** run build",
+    "dev": "pnpm -r --filter ./packages/** run dev",
+    "test": "pnpm -r --filter ./packages/** run test",
+    "lint": "eslint . --ext .ts,.tsx,.vue",
+    "format": "prettier --write .",
+    "release": "pnpm -r build && pnpm -r test && pnpm changeset",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx,vue}": [
+      "eslint --cache --fix",
+      "prettier --write"
+    ],
+    "*.{css,scss,md,json,yaml,yml}": [
+      "prettier --write"
+    ]
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.27.8",
+    "@rollup/plugin-commonjs": "^25.0.0",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-typescript": "^11.1.6",
+    "@types/node": "^24.7.2",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "@typescript-eslint/eslint-plugin": "^7.0.0",
+    "@typescript-eslint/parser": "^7.0.0",
+    "autoprefixer": "^10.4.19",
+    "cssnano": "^6.0.1",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-vue": "^9.21.1",
+    "postcss": "^8.4.31",
+    "prettier": "^3.2.5",
+    "rollup": "^3.29.4",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-vue": "^6.0.0",
+    "sass": "^1.77.5",
+    "husky": "^9.1.6",
+    "lint-staged": "^15.2.10",
+    "@commitlint/cli": "^19.5.0",
+    "@commitlint/config-conventional": "^19.5.0",
+    "typescript": "^5.5.3"
+  }
+}

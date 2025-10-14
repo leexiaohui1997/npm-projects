@@ -1,0 +1,19 @@
+# Node & workspace
+node_modules/
+.DS_Store
+dist/
+coverage/
+*.log
+pnpm-debug.log*
+
+# Env files
+.env
+.env.local
+.env.production
+.env.development
+
+# Changesets
+.changeset/*.md
+
+# Editor
+.idea/
