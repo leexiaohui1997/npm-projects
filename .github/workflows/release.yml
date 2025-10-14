@@ -36,7 +36,6 @@ jobs:
           cache: 'pnpm'
           registry-url: 'https://registry.npmjs.org/'
           scope: '@leexiaohui'
-          always-auth: true
 
       - name: Configure npm auth (write .npmrc)
         env:
@@ -44,7 +43,6 @@ jobs:
         run: |
           echo "Using npm userconfig: $NPM_CONFIG_USERCONFIG"
           echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > "$NPM_CONFIG_USERCONFIG"
-          npm config set always-auth true
 
       - name: Verify npm auth & registry
         run: |
