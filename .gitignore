@@ -12,8 +12,19 @@ pnpm-debug.log*
 .env.production
 .env.development
 
-# Changesets
-.changeset/*.md
+# Caches & reports
+.eslintcache
+*.tsbuildinfo
+.nyc_output/
+.cache/
+node_modules/.cache/
 
 # Editor
 .idea/
+
+# VSCode (keep workspace settings)
+.vscode/*
+!.vscode/settings.json
+
+# OS
+Thumbs.db
