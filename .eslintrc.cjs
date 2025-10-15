@@ -33,7 +33,9 @@ module.exports = {
         sourceType: 'module',
       },
       extends: ['plugin:vue/vue3-recommended', 'prettier'],
-      rules: {},
+      rules: {
+        'vue/multi-word-component-names': 'off',
+      },
     },
   ],
 };

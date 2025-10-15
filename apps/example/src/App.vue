@@ -1,3 +1,7 @@
 <template>
-  <div>Hello World</div>
+  <RouterView />
 </template>
+
+<style lang="scss">
+@import './assets/scss/base.scss';
+</style>
