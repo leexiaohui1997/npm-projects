@@ -1,12 +1,12 @@
-import { camelCase } from 'lodash-es';
+import { kebabCase } from 'lodash-es';
 import type { RouteRecordRaw } from 'vue-router';
 import { pages } from '../utils/define-page';
 
 const pageRoutes: RouteRecordRaw[] = [];
 pages.forEach((page) => {
   pageRoutes.push({
-    name: `Example_${page.options.name}`,
-    path: `/example/${camelCase(page.options.name)}`,
+    name: `${page.projectName}#${page.exampleName}`,
+    path: `/example/${kebabCase(page.projectName)}/${kebabCase(page.exampleName)}`,
     component: page.component,
   });
 });
@@ -22,3 +22,5 @@ export const routes: RouteRecordRaw[] = [
     children: [...pageRoutes],
   },
 ];
+
+console.log({ routes });
