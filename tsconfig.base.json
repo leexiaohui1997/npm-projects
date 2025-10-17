@@ -13,7 +13,12 @@
     "skipLibCheck": true,
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
-    "types": ["node"]
+    "types": ["node"],
+
+    "baseUrl": ".",
+    "paths": {
+      "@example/*": ["apps/example/src/*"]
+    }
   },
   "exclude": ["node_modules", "dist", "coverage"]
 }
