@@ -10,20 +10,18 @@ const matches = import.meta.glob<{
   eager: true,
 });
 
-Object.values(matches).forEach((module) => {
-  if (module.meta) {
-    const res = (module.default as { __file: string }).__file.match(
-      /packages\/([^/]+)\/src\/([^/]\/)*([^.]+)\.example\.vue$/
-    );
+Object.entries(matches).forEach(([filePath, module]) => {
+  if (!module.meta) return;
 
-    const projectName = camelCase(res?.[1] || '');
-    const exampleName = camelCase(res?.[3] || '');
+  const res = filePath.match(/packages\/([^/]+)\/src\/([^/]+\/)*([^.]+)\.example\.vue$/);
 
-    definePage({
-      component: module.default,
-      options: module.meta,
-      projectName,
-      exampleName,
-    });
-  }
+  const projectName = camelCase(res?.[1] || '');
+  const exampleName = camelCase(res?.[3] || '');
+
+  definePage({
+    component: module.default,
+    options: module.meta,
+    projectName,
+    exampleName,
+  });
 });
