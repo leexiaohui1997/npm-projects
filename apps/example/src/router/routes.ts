@@ -23,9 +23,7 @@ export const routes: RouteRecordRaw[] = [
   },
   {
     path: '/example',
-    component: import('../layouts/layout-default.vue'),
+    component: () => import('../layouts/layout-default.vue'),
     children: [...pageRoutes],
   },
 ];
-
-console.log({ routes });
