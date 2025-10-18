@@ -3,10 +3,8 @@
     <div class="layout-aside">
       <docs-menu />
     </div>
-    <div class="layout-content">
-      <div class="layout-main">
-        <router-view />
-      </div>
+    <div class="layout-main">
+      <router-view />
     </div>
   </div>
 </template>
@@ -29,18 +27,10 @@ import DocsMenu from '../components/docs-menu/index.vue';
     overflow: auto;
   }
 
-  &-content {
+  &-main {
     flex: 1;
-    width: 0;
     height: 100%;
     background: $bg-body;
-    overflow: auto;
-    display: flex;
-    flex-direction: column;
-  }
-
-  &-main {
-    padding: 16px;
   }
 }
 </style>

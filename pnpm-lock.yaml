@@ -144,6 +144,12 @@ importers:
       '@vueuse/head':
         specifier: ^2.0.0
         version: 2.0.0(vue@3.5.22)
+      github-markdown-css:
+        specifier: ^5.8.1
+        version: 5.8.1
+      highlight.js:
+        specifier: ^11.11.1
+        version: 11.11.1
       markdown-it-anchor:
         specifier: ^9.2.0
         version: 9.2.0
@@ -3906,6 +3912,14 @@ packages:
       split2: 4.2.0
     dev: true
 
+  /github-markdown-css@5.8.1:
+    resolution:
+      {
+        integrity: sha512-8G+PFvqigBQSWLQjyzgpa2ThD9bo7+kDsriUIidGcRhXgmcaAWUIpCZf8DavJgc+xifjbCG+GvMyWr0XMXmc7g==,
+      }
+    engines: { node: '>=10' }
+    dev: true
+
   /glob-parent@5.1.2:
     resolution:
       {
@@ -4053,6 +4067,14 @@ packages:
         integrity: sha512-F/1DnUGPopORZi0ni+CvrCgHQ5FyEAHRLSApuYWMmrbSwoN2Mn/7k+Gl38gJnR7yyDZk6WLXwiGod1JOWNDKGw==,
       }
     hasBin: true
+    dev: true
+
+  /highlight.js@11.11.1:
+    resolution:
+      {
+        integrity: sha512-Xwwo44whKBVCYoliBQwaPvtd/2tYFkRQtXDWj1nackaV2JPXx3L0+Jvd8/qCJ2p+ML0/XVkJ2q+Mr+UVdpJK5w==,
+      }
+    engines: { node: '>=12.0.0' }
     dev: true
 
   /hookable@5.5.3:

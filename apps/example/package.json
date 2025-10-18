@@ -16,6 +16,8 @@
   },
   "devDependencies": {
     "@vueuse/head": "^2.0.0",
+    "github-markdown-css": "^5.8.1",
+    "highlight.js": "^11.11.1",
     "markdown-it-anchor": "^9.2.0",
     "markdown-it-prism": "^3.0.0",
     "vite-plugin-md": "^0.21.5"

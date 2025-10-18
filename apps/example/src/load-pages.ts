@@ -15,6 +15,7 @@ export type DemoInfo = {
   name: string;
   path: string;
   project: string;
+  fileName: string;
   component: Component;
 };
 
@@ -47,6 +48,7 @@ Object.keys(pkgs).forEach((pkgPath) => {
         name: demoName,
         path,
         project: name,
+        fileName: camelCase(exampleName),
         component: examples[examplePath] as Component,
       };
     });

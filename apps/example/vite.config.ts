@@ -1,6 +1,5 @@
 import vue from '@vitejs/plugin-vue';
-import markdownItAnchor from 'markdown-it-anchor';
-import markdownItPrism from 'markdown-it-prism';
+import hljs from 'highlight.js';
 import { fileURLToPath, URL } from 'node:url';
 import AutoImport from 'unplugin-auto-import/vite';
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers';
@@ -19,10 +18,10 @@ export default defineConfig({
         html: true,
         linkify: true,
         typographer: true,
-      },
-      markdownItSetup(md) {
-        md.use(markdownItAnchor);
-        md.use(markdownItPrism);
+        highlight: (code, lang) => {
+          const language = hljs.getLanguage(lang) ? lang : 'plaintext';
+          return hljs.highlight(code, { language }).value;
+        },
       },
       wrapperClasses: 'markdown-body',
     }),

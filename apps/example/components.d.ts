@@ -9,6 +9,8 @@ export {};
 declare module 'vue' {
   export interface GlobalComponents {
     DocsMenu: typeof import('./src/components/docs-menu/index.vue')['default']
+    ElTabPane: typeof import('element-plus/es')['ElTabPane']
+    ElTabs: typeof import('element-plus/es')['ElTabs']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
   }
