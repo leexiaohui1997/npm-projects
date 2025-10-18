@@ -1,7 +1,7 @@
 <template>
   <div class="layout-docs">
     <el-tabs v-model="activePath" class="docs-tabs">
-      <el-tab-pane :label="'README'" :name="readmePath" />
+      <el-tab-pane label="项目概述" :name="readmePath" />
       <el-tab-pane
         v-for="demo in demoList"
         :key="demo.path"
