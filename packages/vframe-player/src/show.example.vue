@@ -53,18 +53,11 @@
   </div>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
 import { VideoPause, VideoPlay } from '@element-plus/icons-vue';
-import { PageOptions } from '@example/utils/define-page';
 import { computed, onMounted, ref, watch } from 'vue';
 import VFramePlayer from '.';
 
-export const meta: PageOptions = {
-  name: 'VFramePlayerExample',
-};
-</script>
-
-<script setup lang="ts">
 const instance = ref<VFramePlayer>();
 const playerRef = ref<HTMLDivElement>();
 const isPlaying = ref(false);

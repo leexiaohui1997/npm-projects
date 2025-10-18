@@ -1,19 +1,16 @@
 <template>
   <div class="layout-container">
     <div class="layout-aside">
-      <Menu :items="menu" />
+      <docs-menu />
     </div>
-    <div class="layout-content">
-      <div class="layout-main">
-        <router-view />
-      </div>
+    <div class="layout-main">
+      <router-view />
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import Menu from '../components/menu/menu.vue';
-import { menu } from '../constants/menu';
+import DocsMenu from '../components/docs-menu/index.vue';
 </script>
 
 <style lang="scss" scoped>
@@ -30,18 +27,10 @@ import { menu } from '../constants/menu';
     overflow: auto;
   }
 
-  &-content {
+  &-main {
     flex: 1;
-    width: 0;
     height: 100%;
     background: $bg-body;
-    overflow: auto;
-    display: flex;
-    flex-direction: column;
-  }
-
-  &-main {
-    padding: 16px;
   }
 }
 </style>

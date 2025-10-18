@@ -17,6 +17,7 @@
 
     "baseUrl": ".",
     "paths": {
+      "~/*": ["./*"],
       "@example/*": ["apps/example/src/*"]
     }
   },
