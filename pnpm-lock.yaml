@@ -10,6 +10,12 @@ overrides:
 importers:
   .:
     dependencies:
+      '@element-plus/icons-vue':
+        specifier: ^2.3.2
+        version: 2.3.2(vue@3.5.22)
+      element-plus:
+        specifier: ^2.11.5
+        version: 2.11.5(vue@3.5.22)
       lodash-es:
         specifier: ^4.17.21
         version: 4.17.21

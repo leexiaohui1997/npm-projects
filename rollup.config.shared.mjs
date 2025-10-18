@@ -8,7 +8,13 @@ import cssnano from 'cssnano';
 import { createRequire } from 'node:module';
 const require = createRequire(import.meta.url);
 
-export function createConfig({ input, pkg, tsconfig = 'tsconfig.json', enableVue = false, cssModules = false }) {
+export function createConfig({
+  input,
+  pkg,
+  tsconfig = 'tsconfig.json',
+  enableVue = false,
+  cssModules = false,
+}) {
   const externalDeps = new Set([
     ...Object.keys(pkg.dependencies || {}),
     ...Object.keys(pkg.peerDependencies || {}),
@@ -47,7 +53,9 @@ export function createConfig({ input, pkg, tsconfig = 'tsconfig.json', enableVue
       const mod = require('rollup-plugin-vue');
       vuePlugin = mod && (mod.default || mod);
     } catch (e) {
-      throw new Error('Vue build requested but rollup-plugin-vue is not available. Install it and @vue/compiler-sfc.');
+      throw new Error(
+        'Vue build requested but rollup-plugin-vue is not available. Install it and @vue/compiler-sfc.'
+      );
     }
   }
   const vuePlugins = enableVue && vuePlugin ? [vuePlugin({ compileTemplate: true })] : [];

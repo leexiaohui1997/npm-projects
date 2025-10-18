@@ -3,6 +3,6 @@
   "compilerOptions": {
     "outDir": "dist"
   },
-  "include": ["src"],
+  "include": ["src", "../../apps/example/auto-imports.d.ts", "../../apps/example/components.d.ts"],
   "exclude": ["dist", "node_modules"]
 }
