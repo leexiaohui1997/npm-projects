@@ -1,9 +1,9 @@
 import { camelCase, kebabCase } from 'lodash-es';
 import { type Component } from 'vue';
 
-const pkgs = import.meta.glob('~/packages/*/package.json', { eager: true });
-const examples = import.meta.glob('~/packages/**/*.example.vue');
-const readmes = import.meta.glob('~/packages/*/README.md');
+const pkgs = import.meta.glob('../../../packages/*/package.json', { eager: true });
+const examples = import.meta.glob('../../../packages/**/*.example.vue');
+const readmes = import.meta.glob('../../../packages/*/README.md');
 
 export type PackageInfo = {
   name: string;
