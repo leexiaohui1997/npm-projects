@@ -1,5 +1,7 @@
 # @leexiaohui/vframe-player
 
+> 注：本文档由 AI 辅助编写
+
 基于 Canvas 的轻量级序列帧图片播放器。以最小 API 提供帧率控制、循环/往返播放、播放区间、预加载与事件钩子，适合产品动效、分镜浏览、3D/AR 截帧预览等场景。
 
 - 纯 TypeScript，零依赖，支持 Tree-shaking
@@ -51,6 +53,7 @@ yarn add @leexiaohui/vframe-player
   // player.play(10, 40);     // 只播放第 10 到 40 帧（含）
   // player.goto(100);        // 跳转到第 100 帧（0 基）
   // player.set('loop', 3);   // 设置循环次数为 3 次
+  // player.set('fps', 24);   // 动态修改帧率（即时生效）
 </script>
 ```
 
@@ -127,7 +130,7 @@ onMounted(() => {
 - `goto(frame: number): void`
   - 跳转并渲染到指定帧（0 基）。必须位于当前播放区间内。
 - `set<K extends keyof VFramePlayerOptions>(key: K, value: VFramePlayerOptions[K]): void`
-  - 动态更新选项，并触发 `onOptionsChange`。注意：当前版本中 `loop` 会即时生效；其他如 `fps` 等在已加载后不保证即时生效，建议在需要时重新创建实例。
+  - 动态更新选项，并触发 `onOptionsChange`。`loop` 与 `fps` 均即时生效：在播放中修改 `fps` 将在下一帧开始按新帧率推进。
 
 ### 属性
 
@@ -164,7 +167,6 @@ onMounted(() => {
 
 ## 常见问题（FAQ）
 
-- 修改 `fps` 不生效？当前版本在已加载后不保证即时生效，建议重建实例。
 - 画面模糊？确保容器尺寸与期望显示尺寸一致；图片与容器比例差异过大时会发生缩放插值。
 - 跳转帧无效？请检查是否超出当前播放区间（`startFrame~endFrame`）。
 

@@ -41,6 +41,11 @@
       </div>
 
       <div class="row">
+        <span>帧率</span>
+        <el-input-number v-model="fps" :min="1" :max="240" />
+      </div>
+
+      <div class="row">
         <el-checkbox v-model="isTipOnFrameEnter">进入帧提示</el-checkbox>
         <el-input-number v-model="tipFrame" :min="1" :max="maxFrame" />
       </div>
@@ -99,6 +104,11 @@ const setRange = () => {
   instance.value?.play(startFrame.value - 1, endFrame.value - 1);
 };
 
+const fps = ref(60);
+watch(fps, (val) => {
+  instance.value?.set('fps', val);
+});
+
 const isTipOnComplete = ref(false);
 const isTipOnCompleteOne = ref(false);
 const isTipOnCompleteHalf = ref(false);
@@ -110,7 +120,7 @@ onMounted(() => {
   instance.value = new VFramePlayer({
     dom: playerRef.value,
     preload: true,
-    fps: 60,
+    fps: fps.value,
     loop: loopCount.value,
     yoyo: isYoYo.value,
     imgArr: Array.from({ length: 151 }).map(
@@ -126,6 +136,7 @@ onMounted(() => {
     onOptionsChange: (options) => {
       loopCount.value = options.loop ?? 1;
       isYoYo.value = !!options.yoyo;
+      fps.value = options.fps ?? fps.value;
     },
     onComplete: () => {
       if (isTipOnComplete.value) {

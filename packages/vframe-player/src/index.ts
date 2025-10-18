@@ -269,5 +269,13 @@ export default class VFramePlayer {
     if (key === 'loop') {
       this.loop = (value as number) ?? 1;
     }
+
+    if (key === 'fps') {
+      const nextFps = Number(value) || 30;
+      this.frameInterval = 1000 / (nextFps > 0 ? nextFps : 30);
+      if (!this.isPaused) {
+        this.lastFrameTime = 0;
+      }
+    }
   }
 }
