@@ -8,12 +8,7 @@ export {};
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
-    ElButton: typeof import('element-plus/es')['ElButton']
-    ElCheckbox: typeof import('element-plus/es')['ElCheckbox']
-    ElIcon: typeof import('element-plus/es')['ElIcon']
-    ElInputNumber: typeof import('element-plus/es')['ElInputNumber']
-    Menu: typeof import('./src/components/menu/menu.vue')['default']
-    MenuItem: typeof import('./src/components/menu/menu-item.vue')['default']
+    DocsMenu: typeof import('./src/components/docs-menu/index.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
   }

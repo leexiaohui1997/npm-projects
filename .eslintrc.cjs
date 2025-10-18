@@ -22,7 +22,9 @@ module.exports = {
       parserOptions: {
         ecmaFeatures: { jsx: true },
       },
-      rules: {},
+      rules: {
+        '@typescript-eslint/no-explicit-any': 'off',
+      },
     },
     {
       files: ['**/*.vue'],

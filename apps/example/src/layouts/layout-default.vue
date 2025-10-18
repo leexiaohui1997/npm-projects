@@ -1,7 +1,7 @@
 <template>
   <div class="layout-container">
     <div class="layout-aside">
-      <Menu :items="menu" />
+      <docs-menu />
     </div>
     <div class="layout-content">
       <div class="layout-main">
@@ -12,8 +12,7 @@
 </template>
 
 <script setup lang="ts">
-import Menu from '../components/menu/menu.vue';
-import { menu } from '../constants/menu';
+import DocsMenu from '../components/docs-menu/index.vue';
 </script>
 
 <style lang="scss" scoped>

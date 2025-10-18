@@ -1,4 +1,4 @@
-import './load-page';
+import './load-pages';
 
 import { createApp } from 'vue';
 import App from './App.vue';
