@@ -1,20 +1,37 @@
 export type VFramePlayerOptions = {
+  // 容器
   dom?: HTMLElement;
+  // 图片列表
   imgArr?: string[];
+  // 帧率
   fps?: number;
+  // 循环次数，0 表示无限循环
   loop?: number;
+  // 是否往返播放
   yoyo?: boolean;
+  // 是否预加载图片
   preload?: boolean;
+  // 是否自动播放
   autoplay?: boolean;
+  // 播放回调
   onPlay?: () => void;
+  // 暂停回调
   onPaused?: () => void;
+  // 播放结束回调
   onEnd?: () => void;
+  // 播放状态改变回调
   onPlayStateChange?: (isPlaying: boolean) => void;
+  // 图片加载完成回调
   onLoad?: () => void;
+  // 选项改变回调
   onOptionsChange?: (options: VFramePlayerOptions) => void;
+  // 播放完成回调
   onComplete?: () => void;
+  // 播放完成一次回调
   onCompleteOne?: () => void;
+  // 播放完成一半回调
   onCompleteHalf?: () => void;
+  // 进入每一帧回调
   onFrameEnter?: (frame: number) => void;
 };
 
@@ -37,11 +54,11 @@ export default class VFramePlayer {
   private pausedTime = 0;
   private isYoYo = false;
   private loopCount = 1;
-  public loop = 1;
 
   private startFrame = 0;
   private endFrame = 0;
 
+  public loop = 1;
   public get frameCount() {
     return this.imgs.length;
   }
@@ -201,6 +218,11 @@ export default class VFramePlayer {
     this.options.onComplete?.();
   }
 
+  /**
+   * 播放
+   * @param start 开始帧，默认 0
+   * @param end 结束帧，默认最后一帧
+   */
   public play(start?: number, end?: number) {
     if (!this.loaded) {
       this.preload().then(() => this.play());
